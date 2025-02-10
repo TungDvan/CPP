@@ -1,5 +1,9 @@
 # Hiện thị ra màn hình
 
+- include <iostream>, thêm câu lệnh `using namespace std` vào, thực ta thì không có câu lệnh này vẫn được nhưng mà hầu hết tất cả những cái hàm và biến được xây dựng sẵn ở trong C++ nó ở một `namespace` là `std`.
+
+- Chương trình C++ bắt đầu từ hàm `main`.
+
 - Cú pháp: `cout <<`. 
 
     ```C++
