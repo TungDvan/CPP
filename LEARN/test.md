@@ -871,22 +871,37 @@ In ra số lượng chai bia tối đa có thể mua.
 5
 ```
 
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	int volon = n / 28;
+	int bonus = volon / 3 + volon % 3;
+	volon += volon / 3;
+	while (bonus >= 3) {
+		volon += bonus / 3;
+		bonus = bonus / 3 + bonus % 3;
+	}
+	cout << volon << endl;
+	return 0;
+}
+```
+
 # Bài 20. Biểu diễn số nguyên
-
-
-
 
 Cho một số nguyên dương n, hãy biểu diễn n dưới dạng tổng của các số nguyên tố sao cho số lượng số hạng trong tổng là lớn nhất có thể.
 
-**Gợi ý :** N chẵn => biểu diễn dưới toàn số 2, N lẻ thì biểu diễn dưới các số 2 thêm vào 1 số 3 ở cuối. Vì 2 và 3 là 2 số nguyên tố nhỏ nhất
+**Gợi ý :** N chẵn => biểu diễn dưới toàn số 2, N lẻ thì biểu diễn dưới các số 2 thêm vào 1 số 3 ở cuối. Vì 2 và 3 là 2 số nguyên tố nhỏ nhất.
 
 **Đầu vào.**
 
-Số nguyên dương N trên 1 dòng
+Số nguyên dương N trên 1 dòng.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 10^4
+1 ≤ n ≤ 10^4.
 
 **Đầu ra.**
 
@@ -894,41 +909,66 @@ Dòng đầu tiên in ra số lượng số hạng trong tổng. Nếu không th
 
 Dòng 2 in ra các số hạng trong tổng theo thứ tự tăng dần.
 
-
 **Input 01.**
 
-
+```
 6
+```
+
 **Output 01.**
 
+```
 3
 2 2 2
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	if (n <= 1) {
+		cout << -1 << endl;
+		return 0;
+	}
+	int count = n / 2;
+	cout << count << endl;
+	for (int i = 0; i < n / 2 - 1; i++) {
+		cout << 2 << " ";
+	}
+	if (n % 2 == 1) cout << 3 << endl;
+	else cout << 2 << endl;
+	return 0;
+}
+```
+
 # Bài 21. Vẽ hình 1
-
-
-
 
 Nhập N là một số nguyên không quá 100. In ra các hình tương ứng, mỗi hình cách nhau một dòng trống.
 
 **Đầu vào.**
 
-Số nguyên dương N
+Số nguyên dương N.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 100
+1 ≤ n ≤ 100.
 
 **Đầu ra.**
 
-In ra hình sao theo mẫu
+In ra hình sao theo mẫu.
 
 
 **Input 01.**
 
-
+```
 5
+```
+
 **Output 01.**
 
+```
 *****
 *****
 *****
@@ -952,32 +992,70 @@ In ra hình sao theo mẫu
 3       3 
 4       4 
 5 5 5 5 5
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) cout << "*";
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (i == 0 || i == n - 1 || j == 0 || j == n - 1) cout << "*";
+			else cout << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (i == 0 || i == n - 1 || j == 0 || j == n - 1) cout << "*";
+			else cout << "#";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (i == 0 || i == n - 1 || j == 0 || j == n - 1) cout << i + 1 << " ";
+			else cout << "  ";
+		}
+		cout << endl;
+	}
+}
+```
+
 # Bài 22. Vẽ hình 2
-
-
-
 
 Nhập N là một số nguyên không quá 100. In ra các hình tương ứng, mỗi hình cách nhau một dòng trống.
 
 **Đầu vào.**
 
-Số nguyên dương N
+Số nguyên dương N.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 100
+1 ≤ n ≤ 100.
 
 **Đầu ra.**
 
-In ra hình sao theo mẫu
-
+In ra hình sao theo mẫu.
 
 **Input 01.**
 
-
+```
 5
+```
+
 **Output 01.**
 
+```
 *
 **
 ***
@@ -1007,32 +1085,79 @@ In ra hình sao theo mẫu
 * *
 *  *
 *****
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j <= i) cout << "*";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j <= n - i - 1) cout << "*";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j < n - i - 1) cout << " ";
+			else cout << "*";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j < i) cout << " ";
+			else cout << "*";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j == 0 || i == n - 1 || i == j) cout << "*";
+			else cout << " ";
+		}
+		cout << endl;
+	}
+}
+```
+
 # Bài 23. Vẽ hình 3
-
-
-
 
 Nhập N là một số nguyên không quá 100. In ra các hình tương ứng, mỗi hình cách nhau một dòng trống.
 
 **Đầu vào.**
 
-Số nguyên dương N
+Số nguyên dương N.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 100
+1 ≤ n ≤ 100.
 
 **Đầu ra.**
 
-In ra hình số theo mẫu
-
+In ra hình số theo mẫu.
 
 **Input 01.**
 
-
+```
 5
+```
+
 **Output 01.**
 
+```
 1 2 3 4 5 
 6 7 8 9 10 
 11 12 13 14 15 
@@ -1056,14 +1181,51 @@ In ra hình số theo mẫu
 3 7 10 
 4 8 11 13 
 5 9 12 14 15
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	for (int i = 0; i < n; i++) {
+		for (int j = 1; j <= n; j++) cout << j + n * i << " ";
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 1; j <= n; j++) cout << j + i << " ";
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j < n - i - 1) cout << "~";
+			else cout << i + 1;
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 1; i <= n; i++) {
+		cout << i << " ";
+		int tmp = n - 1, count = i;
+		for (int j = 1; j < i; j++) {
+			cout << tmp + count << " ";
+			count = tmp + count;
+			tmp--;
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+```
+
 # Bài 24. UCLN của giai thừa
 
+ố a và b. Nhiệm vụ của bạn là tính ước chung lớn nhất của a giai thừa và b giai thừa.
 
-
-
-Cho 2 số a và b. Nhiệm vụ của bạn là tính ước chung lớn nhất của a giai thừa và b giai thừa
-
-**Gợi ý :** Bài này không thể tính a! và b! vì long long chỉ lưu được cỡ 20!. Bạn thử nghĩ xem UCLN của 10! và 5! là bao nhiêu ?
+**Gợi ý :** Bài này không thể tính a! và b! vì long long chỉ lưu được cỡ 20!. Bạn thử nghĩ xem UCLN của 10! và 5! là bao nhiêu?
 
 **Đầu vào.**
 
@@ -1071,60 +1233,98 @@ Cho 2 số a và b. Nhiệm vụ của bạn là tính ước chung lớn nhất
 
 **Giới hạn.**
 
-0<=a,b<=10^12
+0 <= a,b <= 10^12.
 
-0<=min(a, b)<=12
+0 <= min(a, b) <= 12.
 
 **Đầu ra.**
 
-In ra kết quả trên 1 dòng
-
+In ra kết quả trên 1 dòng.
 
 **Input 01.**
 
-
+```
 2 5
+```
+
 **Output 01.**
 
+```
 2
-Input 02
+```
 
+**Input 02**
+
+```
 3 500000000
-Output 02
+```
 
+**Output 02**
+
+```
 6
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int a, b; cin >> a >> b;
+	int _min = min(a, b);
+	long long tich = 1;
+	for (int i = 1; i <= _min; i++) tich *= i;
+	cout << tich << endl;
+	return 0;
+}
+```
 
 # Bài 25. Thương giai thừa
 
-
-
-
-Cho số nguyên dương N, bạn hãy tính tổng : S(N) = 1/0! + 1/1! + 1/2! + 1/3! +... + 1/(N - 1)!. Trong đó ! là kí hiệu của giai thừa
+Cho số nguyên dương N, bạn hãy tính tổng : S(N) = 1/0! + 1/1! + 1/2! + 1/3! +... + 1/(N - 1)!. Trong đó ! là kí hiệu của giai thừa.
 
 **Đầu vào.**
 
-Dòng duy nhất chứa số nguyên dương N
+Dòng duy nhất chứa số nguyên dương N.
 
 **Giới hạn.**
 
-2 ≤ n ≤ 15
+2 ≤ n ≤ 15.
 
 **Đầu ra.**
 
-In ra kết quả lấy độ chính xác 4 số đằng sau dấu thập phân
+In ra kết quả lấy độ chính xác 4 số đằng sau dấu thập phân.
 
 
 **Input 01.**
 
-
+```
 4
+```
+
 **Output 01.**
 
+```
 2.6667
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	double ans = 1;
+	long long gt = 1;
+	for (int i = 1; i <= n - 1; i++) {
+		gt *= i;
+		ans += 1.0 / gt;
+	}
+	cout << fixed << setprecision(4) << ans;
+}
+```
+
 # Bài 26. Giải phương trình
-
-
-
 
 Cho 3 số a, b, n. Nhiệm vụ của bạn là xác định xem phương trình ax + by = n có tồn tại cặp nghiệm (x, y) nguyên không âm hay không?
 
@@ -1132,90 +1332,150 @@ Cho 3 số a, b, n. Nhiệm vụ của bạn là xác định xem phương trìn
 
 **Đầu vào.**
 
+1 dòng duy nhất chứa 3 số a, b, n.
 
-1 dòng duy nhất chứa 3 số **a, b, n**
 **Giới hạn.**
 
 1<=a,b,n<=1000
 
 **Đầu ra.**
 
-In ra YES nếu tồn tại cặp nghiệm nguyên không âm, ngược lại in ra NO.
-
+In ra `YES` nếu tồn tại cặp nghiệm nguyên không âm, ngược lại in ra `NO`.
 
 **Input 01.**
 
-
+```
 7 10 16
+```
+
 **Output 01.**
 
+```
 NO
-Input 02
+```
 
+**Input 02**
+
+```
 5 3 14
-Output 02
+```
 
+**Output 02**
+
+```
 YES
-# Bài 27. Digital root
+```
 
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int a, b, n; cin >> a >> b >> n;
+	for (int i = 0; i <= n / a; i++) {
+		if ((n - i * a) % b == 0) {
+			cout << "YES";
+			return 0;
+		}
+	}
+	cout << "NO";
+}
+```
 
-
+# Bài 27. Digital root.
 
 Cho số nguyên dương không âm N, ở mỗi thao tác bạn thực hiện tính tổng các chữ số của N sau đó gán lại cho N, thao tác này được thực hiện cho tới khi N chỉ còn 1 chữ số.
 
-Ví dụ N = 278 -> 17 -> 8, vậy ta có dạng rút gọn của 278 là 8. Nhiệm vụ của bạn là tìm dạn rút gọn của 1 số nguyên không âm N cho trước
+Ví dụ N = 278 -> 17 -> 8, vậy ta có dạng rút gọn của 278 là 8. Nhiệm vụ của bạn là tìm dạn rút gọn của 1 số nguyên không âm N cho trước.
 
 **Đầu vào.**
 
-1 dòng chứa số N
+1 dòng chứa số N.
 
 **Giới hạn.**
 
-0 ≤ n ≤ 10^18
+0 ≤ n ≤ 10^18.
 
 **Đầu ra.**
 
-In ra dạng rút gọn của N
-
+In ra dạng rút gọn của N.
 
 **Input 01.**
 
-
+```
 999991020
+```
+
 **Output 01.**
 
+```
 3
-# Bài 28. Tổng giai thừa
+```
 
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	long long n; cin >> n;
+	while (n >= 10) {
+		int sum = 0;
+		while (n) {
+			sum += n % 10;
+			n /= 10;
+		}
+		n = sum;
+	}
+	cout << n;
+}
+```
 
+# Bài 28. Tổng giai thừa	
 
-
-Tính tổng S(n) = 1 + 1.2 + 1.2.3 + 1.2.3.4 + ... + 1.2.3....n
+Tính tổng S(n) = 1 + 1.2 + 1.2.3 + 1.2.3.4 + ... + 1.2.3....n.
 
 **Đầu vào.**
 
-Số nguyên dương n
+Số nguyên dương n.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 12
+1 ≤ n ≤ 12.
 
 **Đầu ra.**
 
-In ra kết quả của S(n)
+In ra kết quả của S(n).
 
 
 **Input 01.**
 
-
+```
 5
+```
+
 **Output 01.**
 
+```
 153
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	long long gt = 1;
+	long long sum = 0;
+	for (int i = 1; i <= n; i++) {
+		gt *= i;
+		sum += gt;
+	}
+	cout << sum;
+}
+```
+
 # Bài 29. Tổng chẵn
-
-
-
 
 Cho N số nguyên, nhiệm vụ của bạn là tính tổng các số nguyên được nhập là số chẵn.
 
@@ -1223,13 +1483,13 @@ Cho N số nguyên, nhiệm vụ của bạn là tính tổng các số nguyên 
 
 Dòng đầu tiên là số nguyên dương N - số lượng số được nhập.
 
-Dòng thứ 2 là N số nguyên được nhập, mỗi số cách nhau một khoảng trắng
+Dòng thứ 2 là N số nguyên được nhập, mỗi số cách nhau một khoảng trắng.
 
 **Giới hạn.**
 
-1 ≤ n ≤ 100000
+1 ≤ n ≤ 100000.
 
-Các số được nhập là số nguyên dương không quá 10^6
+Các số được nhập là số nguyên dương không quá 10^6.
 
 **Đầu ra.**
 
@@ -1238,45 +1498,80 @@ In ra tổng các số chẵn được nhập vào.
 
 **Input 01.**
 
-
+```
 8
 8 9 4 1 5 1 6 6
+```
+
 **Output 01.**
 
+```
 24
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	long long sum = 0;
+	for (int i = 0; i < n; i++) {
+		int tmp; cin >> tmp;
+		if (tmp % 2 == 0) sum += tmp;
+	}
+	cout << sum;
+}
+```
+
 # Bài 30. Kiểm tra nhiều test case
 
-
-
-
-Bài này rất đơn giản, nhiệm vụ của bạn là kiểm tra số nhập vào là chẵn hay lẻ. Các bạn phải trả lời nhiều trường hợp. (Bài này có nhiệm vụ cho các bạn làm quen với các bài toán mà đề bài cho nhiều test case sau này)
+Bài này rất đơn giản, nhiệm vụ của bạn là kiểm tra số nhập vào là chẵn hay lẻ. Các bạn phải trả lời nhiều trường hợp. (Bài này có nhiệm vụ cho các bạn làm quen với các bài toán mà đề bài cho nhiều test case sau này).
 
 **Đầu vào.**
 
-Dòng đầu tiên là số lượng trường hợp T
+Dòng đầu tiên là số lượng trường hợp T.
 
 T dòng tiếp theo mỗi dòng là một số nguyên N cần kiểm tra tính chẵn lẻ.
 
 **Giới hạn.**
 
-1<=T<=100
+1 <= T <= 100.
 
-Các số cần kiểm tra là số không âm không quá 1000
+Các số cần kiểm tra là số không âm không quá 1000.
 
 **Đầu ra.**
 
-Đối với mỗi trường hợp, các bạn in kết quả trên 1 dòng, nếu số ở trường hợp đó là chẵn thì in ra "EVEN", ngược lại in ra "ODD"
+Đối với mỗi trường hợp, các bạn in kết quả trên 1 dòng, nếu số ở trường hợp đó là chẵn thì in ra "EVEN", ngược lại in ra "ODD".
 
 
 **Input 01.**
 
-
+```
 3
 166
 721
 665
+```
+
 **Output 01.**
 
+```
 EVEN
 ODD
 ODD
+```
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n; cin >> n;
+	for (int i = 0; i < n; i++) {
+		int tmp; cin >> tmp;
+		if (tmp % 2 == 0) cout << "EVEN\n";
+		else cout << "ODD\n";
+	}
+}
+```

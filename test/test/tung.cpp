@@ -1,16 +1,15 @@
-// loi giai
-#include <iostream>
-#include <math.h>
+#include<iostream>
+#include<iomanip>
 using namespace std;
-int dem;
-int main(){
-	int n; cin >> n;
-	int volon = n / 28;
-	int volon1 = volon;
-	int count = volon / 3;
-	int them = volon % 3;
-	while (volon >= 3) {
-		 volon /= 3;
+int main() {
+	long long n; cin >> n;
+	while (n >= 10) {
+		int sum = 0;
+		while (n) {
+			sum += n % 10;
+			n /= 10;
+		}
+		n = sum;
 	}
-	cout << volon + volon1 ;
+	cout << n;
 }
