@@ -5,3 +5,4 @@
 |[Buổi 3](LEARN/readme3.md)|`for`; `break`; `continue`; chữa `contest2`: Cơ bản (`7` bài); `switch-case`; `typedef`; `define`; thư viện `bits`; câu lệnh `cin.tie`, `cout.tie`, `setw` và `setfill`|
 |[Buổi 4](LEARN/readme4.md)|Chữa contest2: Vòng lặp|
 
+|[Buổi 5]()||

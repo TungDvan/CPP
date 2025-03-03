@@ -889,6 +889,23 @@ int main() {
 }
 ```
 
+```cpp
+// code by Bạch Hải Phương 
+#include<iostream>
+using namespace std;
+
+int main(){
+	int money; cin >> money;
+	int bia = money / 28;
+	int vo = bia;
+	while(vo >= 3){
+		bia += vo / 3;
+		vo = vo / 3 + vo % 3;
+	}
+	cout << bia << endl;
+}
+```
+
 # Bài 20. Biểu diễn số nguyên
 
 Cho một số nguyên dương n, hãy biểu diễn n dưới dạng tổng của các số nguyên tố sao cho số lượng số hạng trong tổng là lớn nhất có thể.

@@ -1,0 +1,305 @@
+3.   ....attacks originate from the thread itself. ...... attacks originate from na compromised System or resource that is malfunctioning or working under the Control of a threat
+Direct/ Indirect (x)
+
+Passive/ Active
+
+Indirect/ passive
+
+Direct/ Active
+
+
+6.   What was a significant advantage of the UNIX operating system in terms of multitasking capabilities?
+Graphical interface
+
+Single-user access
+
+Real-time processing
+
+Multi-user support (x)
+
+
+7.   Which of the following is a common type of malware designed to replicate itself?
+Spyware
+
+Trojan
+
+Ransomware
+
+Worm (x)
+
+
+8.   Which one of these is not a way of protecting a network?
+have strong password
+
+don't share personal data with people
+
+have anti-virus software
+
+remove anti-virus software (x)
+
+
+10.   A device designed to filter and transfer IP packets between computer networks is called:
+Hub
+
+Switch
+
+Wireless Access Point
+
+Router (x)
+
+
+14.   ..... primary function, text processing,did not require the same level of security as that of its predecessor.
+UNIX's (x)
+
+MULTICS'
+
+ARPANET's
+
+ARPA's
+
+
+16.   The IS component that created much of the need for increased computer and information security is….
+Networking (x)
+
+Software
+
+Hardware
+
+Data
+
+
+17.   Which protocol was primarily used for communication in the early ARPANET?
+SMTP
+
+TCP/IP (x)
+
+HTTP
+
+FTP
+
+
+20.   Which of the following is considered a 'threat vector' in cybersecurity?
+Firewall
+
+Malware (x)
+
+Backup
+
+Encryption
+
+
+21.   ........is a category of objects, persons, or the entities that presents a danger to asset.
+Threat (x)
+
+Security posture
+
+Risk
+
+Vulnerability
+
+
+25.   HTTPS is a type of protocol. What does "S" stands for
+Safe
+
+Secure (x)
+
+Standup
+
+Safety
+
+31.   What are your tips for protecting yourself against identity theft?
+Choosing the right tools on your computer.
+Properly educate yourself about cyber security
+Choosing the right antivirus is important, not only because you need it, but also because it’s an important part of your protection
+All of the above
+
+34.   An intranet is behind a network device, which gives some protection against hackers, viruses, and so on. Which is the network device?
+Proxy server
+VPN
+Firewall (x)
+None of the three
+
+1.   What is the definition of a brute force attack?
+Repeatedly trying usernames/passwords to access a system (x)
+Physically threatening someone to give up personal information
+Physically breaking into a device to hack it
+Being a very strong hacker
+
+2.   Thích critical characteristics of information is the Quality or State of Being genuie or orginal, rather than a reproduction or fabrication?
+Authenticity (x)
+
+Confidentiality
+
+Accuracy
+
+Utility
+
+
+4.   Encryption is a way of
+Securing information on a network (x)
+Securing Viruses
+Deleting applications
+Hacking Passwords
+
+5.   Which of the following best describes a 'vulnerability' in the context of information security?
+A measure of risk
+
+A weakness that can be exploited (x)
+
+A security policy
+
+A potential threat to assets
+
+
+9.   Why do you need security on a computer?
+So no personal data can’t be stolen and hacked also private information (x)
+To share everything with everyone
+To make it difficult for hackers
+
+11.   What is the main purpose of using a VPN in network security?
+To increase internet speed
+
+To provide anonymity online (x)
+
+To enhance video quality
+
+To block ads
+
+
+12.   In cybersecurity, what does the term 'DDoS' stand for?
+Direct Denial of Service
+
+Distributed Data Service
+
+Distributed Denial of Service (x)
+
+Dynamic Denial of Service
+
+
+13.   How many fundamental characteristics does information have?
+3 (x)
+
+7
+
+4
+
+5
+
+
+15.   What is the primary function of an Intrusion Detection System (IDS) in cybersecurity?
+To prevent unauthorized access
+
+To monitor network traffic for suspicious activity (x)
+
+To encrypt sensitive data
+
+To perform regular backups
+
+
+18.   …. are often created under the constraints of project management, which limit time, cost, and manpower
+Software program (x)
+
+Spyware program
+
+Hardware program
+
+Adware program
+
+
+19.   By taking….. of a security weakness a bank consultant can order millions of dollars to be transferred by wire to his own account
+Advantage (x)
+
+Disadvantage
+
+Position
+
+Opportunity
+
+
+22.   Which of the following is a common method used to secure data during transmission over a network?
+Encryption (x)
+
+Encoding
+
+Compression
+
+Hashing
+
+
+23.   This IS component that created much of the need for increased computer and information security is.....
+the software
+
+networking (x)
+
+hardware
+
+Data
+
+
+24.   ……of the IS comprises applications, operating systems, and assorted command utilities
+The software component (x)
+
+The hardware component
+
+The network component
+
+Database
+
+
+26.   In the context of cybersecurity, what does the term 'phishing' refer to?
+A network protocol
+
+A social engineering attack (x)
+
+A type of malware
+
+A data encryption method
+
+
+27.   ..................... is a company that provides users with access to the internet.
+Internet Clients ProviderModemInternet Service ProviderHub
+
+28.   Which of the following is a common type of social engineering attack?
+Man-in-the-Middle
+
+SQL Injection
+
+Phishing (x)
+
+Denial of Service
+
+
+29.   A strong password is better with;
+A simple password based on interests.
+A password no one would relate to you but you can remember.
+A complicated password you may forget.
+A combination of letters, numbers & special characters (x)
+
+30.   Which of the following best describes a 'risk' in the context of information security?
+A security measure
+
+A potential vulnerability
+
+An active attack on a system
+
+The likelihood of a threat exploiting a vulnerability (x)
+
+
+32.   What is the primary role of a firewall in a network security architecture?
+To perform data backup
+
+To monitor network traffic
+
+To encrypt data
+
+To block unauthorized access (x)
+
+
+33.   What was the primary purpose of the TCP/IP protocol suite in the context of ARPANET?
+Web browsing
+
+Email transmission
+
+Data communication (x)
+
+File transfer
