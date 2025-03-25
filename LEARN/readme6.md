@@ -13,10 +13,10 @@ Bạn chỉ cần triển khai chương trình bằng cách hoàn thành nốt m
 
 ```cpp
 void disp1ay(){
-//code here
+    //code here
 }
 int main(){
-return 0;
+    return 0;
 }
 ```
 
@@ -580,7 +580,7 @@ int main() {
 
 # 10: HÀM GỌI HÀM
 
-Bạn thường gọi một hàm trong hàm main(), nhưng thực tế, các hàm có thể gọi lại lẫn nhau.
+Bạn thường gọi một hàm trong hàm `main()`, nhưng thực tế, các hàm có thể gọi lại lẫn nhau.
 
 Một số được gọi là đẹp nếu tổng chữ số của nó là một số có số lượng chữ số chẵn nhiều hơn số lượng chữ số lẻ.
 
@@ -606,7 +606,7 @@ Bạn cần triển khai theo mã nguồn sau:
 
 ```CPP
 // Hàm kiểm tra xem một số có nhiều chữ số chẵn hơn chữ số lẻ hay không
-bool chante(int n) {
+bool chanle(int n) {
     // code here
 }
 
@@ -651,3 +651,192 @@ In ra các số đẹp trên 1 dòng.
 ```
 2 4 6 8 11 13 15 17 20 22 24 26 31 33 35 40 42 44 51 53 60 62 71 80 101 103 105 107 110 112 114 116 121 123 125 130 132 134 141 143 150 152 161 170 200 202 204 206 211 213 215 220 222 224 231 233 240 242 251 260 299 301 303 305 310 312 314 321 323 330 332 341 350 389 398 400 402 404 411 413 420 422 431 440 479 488 497 499 501 503 510 512 521 530 569 578 587 589 596 598 600 602 611 620 659 668 677 679 686 688 695 697 699 701 710
 ```
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+bool chanle(int n) {
+    int chan = 0, le = 0;
+    while (n) {
+        if (n % 2 == 0) chan += 1;
+        else le += 1;
+        n /= 10;
+    }
+    if (chan > le) return true;
+    else return false;
+}
+
+
+bool check(int n) {
+    int sum = 0;
+    while (n) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return chanle(sum);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        if (check(i)) {
+            cout << i << " ";
+        }
+    }
+}
+```
+
+- Lưu ý trong bài này hàm `check()` mà gọi hàm `chanle()` mà hàm `chanle()` xây dựng ở dưới hàm check thì nó sẽ bị lỗi.
+
+    ![alt text](image-15.png)
+
+    Nguyên nhân của lỗi là do trình biên dịch chạy từ trên xuống dưới, và khi nó chạy vào hàm `check()` thì nó thấy hàm `chanle()` mà nó chưa gặp hàm chẵn lẻ thì nó sẽ báo lỗi. 
+    
+    Nên là thông thường khi mà xây dựng hàm nếu mà hàm `A` gọi hàm `B` thì hàm `B` cần xây dựng trước hàm `A`. Còn nếu mà muốn xây dựng sau thì mình cần phải khai báo trước ra (còn được gọi là khai báo nguyên mẫu hàm `forward decleration` = `function prototype`). Tức là mình sẽ thông báo cho trinh biên mình biết rằng chương trình của mình có những hàm gì, kiểu trả về là bao nhiêu và tham số truyền vào là gì.
+
+    Ví dụ như sau:
+
+    ```cpp
+    bool check(int);
+    bool chanle(int);
+    ```
+
+    Như vậy 2 dòng này sẽ thông báo cho chương trình của mình biết là tui có 2 hàm là hàm `check()` và hàm `chanle()` có kiểu trả về là bool và tham số truyền vào là int.
+
+    Trong bài trên cụ thể là như sau:
+
+    ```cpp
+    #include <iostream>
+
+    using namespace std;
+
+    bool check(int);
+    bool chanle(int);
+
+    bool check(int n) {
+        int sum = 0;
+        while (n) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return chanle(sum);
+    }
+
+    bool chanle(int n) {
+        int chan = 0, le = 0;
+        while (n) {
+            if (n % 2 == 0) chan += 1;
+            else le += 1;
+            n /= 10;
+        }
+        if (chan > le) return true;
+        else return false;
+    }
+
+
+    int main() {
+        int n;
+        cin >> n;
+        for (int i = 1; i <= n; i++) {
+            if (check(i)) {
+                cout << i << " ";
+            }
+        }
+    }
+    ```
+
+# 11: SWAP
+
+Bạn hãy viết hàm sử dụng tham chiếu để swap giá trị của 2 số.
+
+```cpp
+void my_swap(int &a, int &b){
+    //code here
+}
+
+int main(){
+    int x, y; cin >> x >> y;
+    swap(x, y);
+    cout << x << " " << y << endl;
+    return 0;
+}
+```
+
+**Input Format.**
+
+1 dòng duy nhất chứa 2 số nguyên x, y.
+
+**Constraints.**
+
+x, y là số nguyên 32 bit b.
+
+**Output Format.**
+
+In ra 2 số x, y sau khi swap.
+
+**Sample Input 0.**
+
+```
+748 494
+```
+
+**Sample Output 0.**
+
+```
+494 748
+```
+
+```cpp
+#include<iostream>
+
+using namespace std;
+
+void my_swap(int& a, int& b) {
+    int tmp = a;
+    a = b;
+    b = tmp;
+    return;
+}
+
+int main() {
+    int x, y; cin >> x >> y;
+    swap(x, y);
+    cout << x << " " << y << endl;
+    return 0;
+}
+```
+
+# 12: SỐ TĂNG
+
+Một số được coi là số tăng nếu các chữ số của nó tăng dần từ trái qua phải. Bạn hãy liệt kê những số tăng dần trong đoạn từ a tới b. Ví dụ, số `12789` là số tăng dần. Gợi ý: So sánh các cặp chữ số đứng cạnh nhau: 9 - 8, 8 - 7, 7 - 2, 2 - 1. Nếu trong quá trình so sánh, thấy số đứng sau >= số đứng trước thì `return false` ngay. Lưu ý: để vòng lặp `while(n >= 10)`, để khi n tới 1 chữ số thì nó sẽ dừng.
+
+```cpp
+bool so_tang(int n) {
+    // Code kiểm tra số tăng
+}
+
+int main() {
+    int a, b; cin >> a >> b;
+    for (int i = a; i <= b; i++) {  
+        if (so_tang(i)) {  
+            cout << i << " ";  
+        }
+    }
+    return 0;
+}
+```
+
+**Input Format:**
+
+Dòng duy nhất chứa 2 số nguyên a, b.
+
+**Constraints:**
+
+a, b là số nguyên không âm, trong phạm vi 32-bit.
+
+**Output Format:**
+
+In ra các số tăng trong đoạn [a, b].
